@@ -1,0 +1,12 @@
+# config.yaml
+
+targets:
+  - type: playlist
+    id:   # Senin playlist ID’n
+
+storage:
+  music_dir: #Kayıt Yeri
+
+archive_file: /home/ali/Müzik/trpop2025/archive.txt
+
+log_file: ytdownloader.log
