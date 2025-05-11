@@ -76,7 +76,7 @@ def main():
     parser.add_argument('--config', help='Path to config.yaml', default='config.yaml')
     args = parser.parse_args()
 
-    # Ask user for custom download directory or use config
+    
     custom_dir = input('Kaydedileceği dizin (boş bırakırsan config kullanılır): ').strip()
     cfg = load_config(args.config)
     storage = cfg.get('storage', {})
@@ -88,12 +88,11 @@ def main():
     setup_logging(cfg.get('log_file', 'ytdownloader.log'))
     ydl_opts = get_ydl_opts(music_dir, archive_file)
 
-    # Ask for single link or run config targets
+   
     link = input('YouTube video/playlist/search link veya arama terimi (boş bırakmak için Enter): ').strip()
 
     if link:
-        # If input is plain text (no URL or prefix), yt-dlp default_search handles search
-        download_url(link, ydl_opts)
+        download_url(link, ydl_opts)# If input is plain text (no URL or prefix), yt-dlp default_search handles search
     else:
         for item in cfg.get('targets', []):
             try:
